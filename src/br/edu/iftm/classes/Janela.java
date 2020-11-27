@@ -72,26 +72,26 @@ public class Janela extends JFrame{
 		labelSem2.setLayout(null);
 		labelSem2.setIcon(new ImageIcon("./imagens/sinal_vermelho.png"));
 		labelSem2.setVisible(true);
-		labelSem2.setBounds(325,260,100,180);
+		labelSem2.setBounds(250,200,700,100);
 		panelFundo.add(labelSem2);
 		labelP2 = new JLabel();
 		labelP2.setLayout(null);
 		labelP2.setIcon(new ImageIcon("./imagens/sinal_vermelho_p.png"));
 		labelP2.setVisible(true);
-		labelP2.setBounds(350,300,40,42);
+		labelP2.setBounds(275,200,40,42);
 		panelFundo.add(labelP2);
 		
 		labelSem3 = new JLabel(); // SEMAFORO ESQUERDA
 		labelSem3.setLayout(null);
 		labelSem3.setIcon(new ImageIcon("./imagens/sinal_vermelho.png"));
 		labelSem3.setVisible(true);
-		labelSem3.setBounds(250,200,700,100);
+		labelSem3.setBounds(325,260,100,180);
 		panelFundo.add(labelSem3);
 		labelP3 = new JLabel();
 		labelP3.setLayout(null);
 		labelP3.setIcon(new ImageIcon("./imagens/sinal_vermelho_p.png"));
 		labelP3.setVisible(true);
-		labelP3.setBounds(275,200,40,42);
+		labelP3.setBounds(350,300,40,42);
 		panelFundo.add(labelP3);
 		
 		labelSem4 = new JLabel(); // SEMAFORO DIRETA
@@ -109,100 +109,6 @@ public class Janela extends JFrame{
 		
 
 		
-		btnTeste = new JButton("Teste");
-		btnTeste.setLayout(null);
-		btnTeste.setVisible(true);
-		btnTeste.setBounds(100, 100, 80, 60);
-		panelFundo.add(btnTeste);
-		btnTeste.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if(cont == 1) {
-					// Semaforo
-					if(Sem[cont-1] == false) {
-						Sem[cont-1] = true;
-						mudarVerdeS(1);
-					}else {
-						Sem[cont-1] = false;
-						mudarVermelhoS(1);
-					}
-					
-					// Semaforo Pessoa
-					if(Pes[cont-1] == false) {
-						Pes[cont-1] = true;
-						mudarVerdeP(1);
-					}else {
-						Pes[cont-1] = false;
-						mudarVermelhoP(1);
-					}
-					cont++;
-				}
-				else if(cont == 2) {
-					// Semaforo
-					if(Sem[cont-1] == false) {
-						Sem[cont-1] = true;
-						mudarVerdeS(2);
-					}else {
-						Sem[cont-1] = false;
-						mudarVermelhoS(2);
-					}
-					
-					// Semaforo Pessoa
-					if(Pes[cont-1] == false) {
-						Pes[cont-1] = true;
-						mudarVerdeP(2);
-					}else {
-						Pes[cont-1] = false;
-						mudarVermelhoP(2);
-					}
-					cont++;
-				}
-				else if(cont == 3) {
-					// Semaforo
-					if(Sem[cont-1] == false) {
-						Sem[cont-1] = true;
-						mudarVerdeS(3);
-					}else {
-						Sem[cont-1] = false;
-						mudarVermelhoS(3);
-					}
-					
-					// Semaforo Pessoa
-					if(Pes[cont-1] == false) {
-						Pes[cont-1] = true;
-						mudarVerdeP(3);
-					}else {
-						Pes[cont-1] = false;
-						mudarVermelhoP(3);
-					}
-					cont++;
-				}
-				else {
-					// Semaforo
-					if(Sem[cont-1] == false) {
-						Sem[cont-1] = true;
-						mudarVerdeS(4);
-					}else {
-						Sem[cont-1] = false;
-						mudarVermelhoS(4);
-					}
-					
-					// Semaforo Pessoa
-					if(Pes[cont-1] == false) {
-						Pes[cont-1] = true;
-						mudarVerdeP(4);
-					}else {
-						Pes[cont-1] = false;
-						mudarVermelhoP(4);
-					}
-					cont = 1;
-				}	
-				
-				System.out.print("\ncont = " + cont + " ");
-				for (int i = 0; i < Pes.length; i++) {
-					System.out.print(Pes[i]);
-				}
-			}
-		});
 		
 		
 		labelFundo = new JLabel();

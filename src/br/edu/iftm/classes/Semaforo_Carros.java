@@ -8,11 +8,15 @@ public class Semaforo_Carros implements Runnable {
 	private int Id;
 	private int Vez;
 	private boolean Ligado = true;
+	private Janela j;
+	private Semaforo_Pessoas sp;
 	
-	public Semaforo_Carros(int identif) {
+	public Semaforo_Carros(int identif, Janela j, Semaforo_Pessoas sp) {
 		
+		this.sp = sp;
 		this.Vez = 1;
 		this.Id = identif;
+		this.j = j;
 		this.Tempo_Verde = 5;
 		this.Tempo_Amarelo = 2;
 		this.Tempo_Vermelho = 8;		
@@ -30,13 +34,16 @@ public class Semaforo_Carros implements Runnable {
 			synchronized(this) {
 				if(this.Id == this.Vez) {
 					
+					sp.verificar(this.Id);
 					System.out.println("\nSemaforo "+this.Id+" esta verde.");
+					j.mudarVerdeS(this.Id);
 					try {
 						wait(this.Tempo_Verde*1000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					j.mudarAmareloS(this.Id);
 					System.out.println("Semaforo "+this.Id+" esta amarelo.");
 					try {
 						wait(this.Tempo_Amarelo*1000);
@@ -44,6 +51,7 @@ public class Semaforo_Carros implements Runnable {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					j.mudarVermelhoS(this.Id);
 					System.out.println("Semaforo "+this.Id+" esta vermelho.\n");
 					try {
 						wait(100);
