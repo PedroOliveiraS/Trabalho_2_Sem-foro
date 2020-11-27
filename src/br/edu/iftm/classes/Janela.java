@@ -1,4 +1,4 @@
-package br.edu.iftm.tests;
+package br.edu.iftm.classes;
 
 import javax.swing.JFrame;
 
